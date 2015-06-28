@@ -19,6 +19,7 @@
 
     <div class="main" ng-controller="MainController">
       <div class="container">
+        
         <div class="content">
 
           <!--
@@ -26,16 +27,18 @@
           <div>
             <div class="rank">{{$index + 1}}</div>
             
-            </div>
+          </div>
           -->
-
+          
           <!-- Finish the view display each item in the shows array. Under the .rank div, use the <tv-show> directive to display the details of each show. Pass in each show into the <tv-show> directive's info element. -->
-          <div class="rank">{{$index + 1}}</div>
+          <div ng-repeat="info in info">
+            <div class="rank">{{$index + 1}}</div>
             <!-- here's the directive... notice that the tvShow becomes <tv-show>...  we use info="shows" because $scope.shows is the object with the data -->
             <tv-show info="shows"></tv-show>
           </div>
 
         </div>
+
       </div>
     </div>
 
