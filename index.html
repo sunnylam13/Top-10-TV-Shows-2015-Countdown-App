@@ -6,9 +6,10 @@
     <link href="css/main.css" rel="stylesheet" />
     <script src="js/vendor/angular.min.js"></script>
   </head>
-  <body>
+  <body ng-app="Top10App">
 
     <!-- TARGET:  http://s3.amazonaws.com/codecademy-content/projects/4/top-10/index.html -->
+    <!-- https://s3.amazonaws.com/codecademy-content/courses/ltp4/shows-api/shows.json -->
 
     <div class="header">
       <div class="container">
@@ -16,7 +17,7 @@
       </div>
     </div>
 
-    <div class="main">
+    <div class="main" ng-controller="MainController">
       <div class="container">
         <div class="content">
 
@@ -27,6 +28,12 @@
             
             </div>
           -->
+
+          <!-- Finish the view display each item in the shows array. Under the .rank div, use the <tv-show> directive to display the details of each show. Pass in each show into the <tv-show> directive's info element. -->
+          <div class="rank">{{$index + 1}}</div>
+            <!-- here's the directive... notice that the tvShow becomes <tv-show>...  we use info="shows" because $scope.shows is the object with the data -->
+            <tv-show info="shows"></tv-show>
+          </div>
 
         </div>
       </div>
@@ -39,9 +46,9 @@
     <script src="js/controllers/MainController.js"></script>
 
     <!-- Directives -->
-    
+    <script src="js/directives/tvShow.js"></script>
 
     <!-- Services -->
-    
+    <script src="js/services/shows.js"></script>
   </body>
 </html>
