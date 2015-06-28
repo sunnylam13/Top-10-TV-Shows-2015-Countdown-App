@@ -31,11 +31,12 @@
           -->
           
           <!-- Finish the view display each item in the shows array. Under the .rank div, use the <tv-show> directive to display the details of each show. Pass in each show into the <tv-show> directive's info element. -->
-          <div ng-repeat="info in info">
-            <div class="rank">{{$index + 1}}</div>
-            <!-- here's the directive... notice that the tvShow becomes <tv-show>...  we use info="shows" because $scope.shows is the object with the data -->
-            <tv-show info="shows"></tv-show>
-          </div>
+
+          <!-- here's the directive... notice that the tvShow becomes <tv-show>...  we use info="shows" because $scope.shows is the object with the data -->
+          <!-- within the tvShow.html, use prop in info, make sure the data object is named info -->
+          <!-- KEY POINT: move everything you need formatted or the individual units into the tvShow.html instead... it's 10 times easier than doing it out here  -->
+          <tv-show info="shows"></tv-show>
+
 
         </div>
 
